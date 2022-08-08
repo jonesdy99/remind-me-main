@@ -1,40 +1,50 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0d7d018ff8.js" crossorigin="anonymous"></script>
+  {% block head%}
+  {% endblock %}
   <title>RemindMe</title>
 </head>
 <body>
   {% if request.user.is_authenticated %}
-  <p>{{request.user}}</p>
-  <a href="{% url 'logout' %}">Logout</a>
+  <p class='user'>Logged in as {{request.user}}</p>
+  <a href="{% url 'logout' %}" class='logout-link'>Logout</a>
   {% else %}
-  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'login' %}" class='login-link'>Login</a>
   {% endif %}
   <hr>
-  <h1>My list</h1>
-  <a href="{% url 'task-create' %}">Add Task</a>
-  <form method="GET">
-    <input type="text" name='search-bar' value={{search_input}}>
-    <input type="submit" value='Search'>
-  </form>
-  <table>
-    <tr>
-      <th>Item</th>
-      <th></th>
-    </tr>
-    {% for task in tasks %}
-    <tr>
-      <td>{{task.title}}</td>
-      <td><a href="{% url 'task' task.id %}">View</a></td>
-      <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-      <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-    </tr>
-    {% empty %}
-      <h3>No items in list</h3>
-    {% endfor %}
-  </table>
+  <div class='list-container'>
+    <form method="GET">
+      <input type="text" name='search-bar' value={{search_input}}>
+      <button type="submit" class='search'><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <h1>My list</h1>
+    <table class='list-components'>
+      <tr>
+        <th class='list-header'>Items</th>
+      </tr>
+      {% for task in tasks %}
+      <tr>
+        <td class='task'>{{task.title}}</td>
+        {% comment %} <td><a href="{% url 'task' task.id %}">View</a></td> {% endcomment %}
+        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
+        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+      </tr>
+      {% empty %}
+        <h3>No items in list</h3>
+      {% endfor %}
+    </table>
+  </div>
 </body>
+<div class='nav-bar'>
+  <a href="{% url 'task-create' %}" class='add-task'><i class="fa-solid fa-pen-to-square"></i></a>
+</div>
 </html>

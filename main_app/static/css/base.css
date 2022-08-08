@@ -1,0 +1,78 @@
+html, body {
+  background-color: #333;
+  color: whitesmoke;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  background-size: auto;
+  height: 100%;
+  margin: 0;
+}
+
+.logout-link{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.login-link{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.list-container{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.list-components{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+
+.list-header{
+  padding: 10px;
+}
+
+.task{
+  padding: 5px;
+}
+
+.add-task{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 20px;
+  background-color: transparent;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.add-task:hover{
+  color: rgba(245, 245, 245, 0.397);
+}
+
+.search{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 9px;
+  color: whitesmoke;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.search:hover{
+  color: rgba(245, 245, 245, 0.397);
+}
+
+.nav-bar{
+  background-color: rgba(245, 245, 245, 0.5);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
