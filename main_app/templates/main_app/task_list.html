@@ -26,14 +26,14 @@
         <input type="text" name='search-bar' value={{search_input}}>
         <button type="submit" class='search'><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
-      <h1>My list</h1>
+      <h1 class='user-list-header'>{{request.user}}'s list</h1>
       <table class='list-components'>
-        <tr>
-          <th class='list-header'>Items</th>
-        </tr>
+        <div>
+          <th class='list-header'>My Tasks</th>
+        </div>
         {% for task in tasks %}
         <tr>
-            <td class='task'><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task.title}}</a></td>
+            <td class='task'><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task.title}} - {{task.created}}</a></td>
             <td><a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-square-xmark"></i></a></td>
         </tr>
         {% empty %}

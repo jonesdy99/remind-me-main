@@ -1,5 +1,5 @@
 html, body {
-  background-color: #333;
+  background: linear-gradient(#000000, #202024);
   color: whitesmoke;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
@@ -10,7 +10,7 @@ html, body {
 }
 
 .nav-bar{
-  background-color: rgba(245, 245, 245, 0.5);
+  background-color: rgba(245, 245, 245, 0.143);
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -45,7 +45,9 @@ html, body {
   align-items: center;
   background-color: rgba(245, 245, 245, 0.116);
   display: inline-block;
-  border-radius: 30px;
+  border-radius: 5px;
+  border-color: whitesmoke;
+  border: 1px;
 }
 
 
@@ -60,10 +62,6 @@ html, body {
   padding: 10px;
 }
 
-/* .task{
-  padding: 7px;
-  background-color: rgba(245, 245, 245, 0.248);
-} */
 
 .add-task{
   text-decoration: none;
@@ -96,7 +94,7 @@ html, body {
   color: red;
   text-decoration: none;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .delete-btn:hover{
@@ -106,4 +104,8 @@ html, body {
 .edit-btn{
   color: whitesmoke;
   text-decoration: none;
+}
+
+.user-list-header{
+  padding: 5px;
 }
