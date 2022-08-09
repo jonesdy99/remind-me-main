@@ -10,7 +10,7 @@ html, body {
 }
 
 .nav-bar{
-  background-color: rgba(245, 245, 245, 0.143);
+  background-color: rgba(245, 245, 245, 0.053);
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -62,6 +62,10 @@ html, body {
   padding: 10px;
 }
 
+.incomplete-header{
+  padding: 8px;
+}
+
 
 .add-task{
   text-decoration: none;
@@ -108,4 +112,11 @@ html, body {
 
 .user-list-header{
   padding: 5px;
+}
+
+.task-div{
+  background-color: rgba(255, 255, 255, 0.119);
+  border: 1px solid;
+  border-radius: 8px;
+  margin-bottom: 4px;
 }

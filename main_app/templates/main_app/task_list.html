@@ -9,14 +9,13 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/0d7d018ff8.js" crossorigin="anonymous"></script>
-  {% block head%}
-  {% endblock %}
   <title>RemindMe</title>
+  {% block head %}
+  {% endblock %}
 </head>
 <body>
   {% if request.user.is_authenticated %}
   <p class='user'>Logged in as {{request.user}}</p>
-  {% comment %} <a href="{% url 'logout' %}" class='logout-link'>Logout</a> {% endcomment %}
   {% else %}
   <a href="{% url 'login' %}" class='login-link'>Login</a>
   {% endif %}
@@ -27,15 +26,21 @@
         <button type="submit" class='search'><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
       <h1 class='user-list-header'>{{request.user}}'s list</h1>
+      <h3 class='incomplete-header'>You have {{count}} incomplete tasks</h3>
       <table class='list-components'>
-        <div>
-          <th class='list-header'>My Tasks</th>
-        </div>
         {% for task in tasks %}
-        <tr>
-            <td class='task'><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task.title}} - {{task.created}}</a></td>
-            <td><a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-square-xmark"></i></a></td>
-        </tr>
+        <div class='task-div'>
+          {% if task.complete %}
+          <div>
+            <i><s><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task}} - {{task.created}}</a></s></i>
+          </div>
+          {% else %}
+          <div>
+            <a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task}} - {{task.created}}</a>
+          </div>
+          {% endif %}
+          <a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-square-xmark"></i></a>
+        </div>
         {% empty %}
           <h3>No items in list</h3>
         {% endfor %}
@@ -49,4 +54,6 @@
     <a href="{% url 'logout' %}"><i class="fa-solid fa-user-xmark"></i></a>
   {% endif %}
 </div>
+  {% block content %}
+  {% endblock %}
 </html>
