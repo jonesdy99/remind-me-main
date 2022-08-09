@@ -22,33 +22,31 @@
   {% endif %}
   <hr>
   <div class='list-container'>
-    <form method="GET">
-      <input type="text" name='search-bar' value={{search_input}}>
-      <button type="submit" class='search'><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-    <h1>My list</h1>
-    <table class='list-components'>
-      <tr>
-        <th class='list-header'>Items</th>
-      </tr>
-      {% for task in tasks %}
-      <tr>
-        <td class='task'>{{task.title}}</td>
-        {% comment %} <td><a href="{% url 'task' task.id %}">View</a></td> {% endcomment %}
-        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-      </tr>
-      {% empty %}
-        <h3>No items in list</h3>
-      {% endfor %}
-    </table>
+      <form method="GET" class='search-header'>
+        <input type="text" name='search-bar' value={{search_input}}>
+        <button type="submit" class='search'><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <h1>My list</h1>
+      <table class='list-components'>
+        <tr>
+          <th class='list-header'>Items</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td class='task'><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task.title}}</a></td>
+            <td><a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-square-xmark"></i></a></td>
+        </tr>
+        {% empty %}
+          <h3>No items in list</h3>
+        {% endfor %}
+      </table>
   </div>
 </body>
 <div class='nav-bar'>
   {% if request.user.is_authenticated %}
     <a href="{% url 'task-create' %}" class='add-task'><i class="fa-solid fa-pen-to-square"></i></a>
     <a href="{% url 'tasks' %}"><i class="fa-solid fa-eye"></i></a>
-    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'logout' %}"><i class="fa-solid fa-user-xmark"></i></a>
   {% endif %}
 </div>
 </html>

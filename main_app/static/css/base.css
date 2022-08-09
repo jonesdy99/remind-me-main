@@ -6,6 +6,7 @@ html, body {
   background-size: auto;
   height: 100%;
   margin: 0;
+  text-align: center;
 }
 
 .nav-bar{
@@ -25,10 +26,12 @@ html, body {
   align-items: center;
   text-decoration: none;
   color: whitesmoke;
+  font-size: 25px;
+  transition: 0.5s;
 }
 
-.logout-div{
-
+.nav-bar a:hover{
+  color: rgba(245, 245, 245, 0.397);
 }
 
 .login-link{
@@ -40,7 +43,12 @@ html, body {
   justify-content: center;
   text-align: center;
   align-items: center;
+  background-color: rgba(245, 245, 245, 0.116);
+  display: inline-block;
+  border-radius: 30px;
 }
+
+
 
 .list-components{
   justify-content: center;
@@ -52,21 +60,17 @@ html, body {
   padding: 10px;
 }
 
-.task{
-  padding: 5px;
-}
+/* .task{
+  padding: 7px;
+  background-color: rgba(245, 245, 245, 0.248);
+} */
 
 .add-task{
   text-decoration: none;
   color: whitesmoke;
-  font-size: 20px;
   background-color: transparent;
   transition: 0.5s;
   padding-left: 20px;
-}
-
-.add-task:hover{
-  color: rgba(245, 245, 245, 0.397);
 }
 
 .search{
@@ -82,4 +86,24 @@ html, body {
 
 .search:hover{
   color: rgba(245, 245, 245, 0.397);
+}
+
+.search-header{
+  padding: 10px;
+}
+
+.delete-btn{
+  color: red;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.delete-btn:hover{
+  color: rgba(251, 146, 146, 0.683);
+}
+
+.edit-btn{
+  color: whitesmoke;
+  text-decoration: none;
 }
