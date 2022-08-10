@@ -27,7 +27,7 @@
       </form>
       <h1 class='user-list-header'>{{request.user}}'s list</h1>
       <h3 class='incomplete-header'>You have {{count}} incomplete tasks</h3>
-      <table class='list-components'>
+      <div class='list-components'>
         {% for task in tasks %}
         <div class='task-div'>
           {% if task.complete %}
@@ -39,12 +39,14 @@
             <a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task}} - {{task.created}}</a>
           </div>
           {% endif %}
-          <a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-square-xmark"></i></a>
+          <div class='delete-btn-container'>
+            <a href="{% url 'task-delete' task.id %}" class='delete-btn'><i class="fa-solid fa-trash-arrow-up"></i></a>
+          </div>
         </div>
         {% empty %}
           <h3>No items in list</h3>
         {% endfor %}
-      </table>
+      </div>
   </div>
 </body>
 <div class='nav-bar'>

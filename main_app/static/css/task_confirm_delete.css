@@ -1,9 +1,10 @@
 .go-back-btn{
-  text-decoration: none;
   color: whitesmoke;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.submit-btn{
+.delete-btn{
   color: whitesmoke;
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -15,23 +16,11 @@
   transition: 0.2s;
 }
 
-.submit-btn:hover{
+.delete-btn:hover{
   border: 2px solid white;
   background-color: rgba(146, 144, 144, 0.428);
 }
 
-.container{
-  background-color: rgba(245, 245, 245, 0.129);
-  display: inline-block;
-  border-radius: 5px;
-}
-
-.container-text{
-  display: grid;
-  padding: 10px;
-}
-
-.title-tag{
-  background-color: rgba(245, 245, 245, 0.129);
-  border-radius: 4px;
+.delete-text{
+  font-size: 30px;
 }
