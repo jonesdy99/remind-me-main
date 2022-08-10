@@ -97,8 +97,8 @@ html, body {
 .delete-btn{
   color: red;
   text-decoration: none;
-  transition: 0.3s;
-  font-size: 25px;
+  transition: 0.2s;
+  font-size: 40px;
 }
 
 .delete-btn:hover{

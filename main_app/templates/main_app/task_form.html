@@ -7,18 +7,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <script src="https://kit.fontawesome.com/0d7d018ff8.js" crossorigin="anonymous"></script>
+  {% block head%}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/task_form.css' %}">
+  {% endblock %}
   <title>Task Form</title>
 </head>
 <body>
   {% block content %}
-  <h3>Task Form</h3>
-  <a href="{% url 'tasks' %}">Go Back</a>
-  <form method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
-  </form>
+  <div class='container'>
+    <div class='container-text'>
+      <h3 class='title-tag'>Task Form</h3>
+      <a href="{% url 'tasks' %}" class='go-back-btn'><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+      <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit" class='submit-btn'>
+      </form>
+    </div>
+  </div>  
 </body>
 {% endblock %}
 </html>

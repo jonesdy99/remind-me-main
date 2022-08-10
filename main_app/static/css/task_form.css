@@ -1,0 +1,31 @@
+.go-back-btn{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.submit-btn{
+  color: whitesmoke;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.container{
+  background-color: rgba(245, 245, 245, 0.129);
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.container-text{
+  display: grid;
+  padding: 10px;
+}
+
+.title-tag{
+  background-color: rgba(245, 245, 245, 0.129);
+  border-radius: 4px;
+}
