@@ -1,3 +1,4 @@
+{% extends 'main_app/base.html'%}
 {% load static %}
 
 <!DOCTYPE html>
@@ -6,15 +7,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <script src="https://kit.fontawesome.com/0d7d018ff8.js" crossorigin="anonymous"></script>
+  {% block head%}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  {% endblock %}
   <title>Login</title>
 </head>
 <body>
+  {% block content %}
   <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="login">
+    <div class='login-container'>
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Login" class='login-btn'>
+    </div>
   </form>
-  <p>Want to sign up? <a href="{% url 'register' %}">Register</a></p>
+  <p>Want to sign up? <a href="{% url 'register' %}" class='register-btn'>Register Here</a></p>
 </body>
+{% endblock %}
 </html>

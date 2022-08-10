@@ -1,0 +1,30 @@
+.register-btn{
+  color: whitesmoke;
+  background-color: transparent;
+  display: grid;
+  margin-top: 30px;
+}
+
+.login-btn{
+  color: whitesmoke;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.login-btn:hover{
+  border: 2px solid white;
+  background-color: rgba(146, 144, 144, 0.428);
+}
+
+.login-container{
+  display: inline-block;
+  background-color: rgba(245, 245, 245, 0.093);
+  padding: 20px;
+  border-radius: 5px;
+}

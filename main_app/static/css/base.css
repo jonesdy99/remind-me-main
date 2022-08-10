@@ -45,7 +45,7 @@ html, body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-color: rgba(245, 245, 245, 0.116);
+  background-color: rgba(245, 245, 245, 0.077);
   display: inline-block;
   border-radius: 5px;
   border-color: whitesmoke;
@@ -72,6 +72,7 @@ html, body {
 
 .incomplete-header{
   padding: 8px;
+  border-bottom: 0.5px solid white;
 }
 
 
@@ -124,6 +125,7 @@ html, body {
 
 .user-list-header{
   padding: 5px;
+  border-bottom: 2px solid white;
 }
 
 .task-div{
