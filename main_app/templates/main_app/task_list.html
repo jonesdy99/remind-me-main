@@ -32,7 +32,7 @@
         <div class='task-div'>
           {% if task.complete %}
           <div>
-            <i><s><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task}} - {{task.created}}</a></s></i>
+            <i><s class='strike'><a href="{% url 'task-update' task.id %}" class='edit-btn'>{{task}} - {{task.created}}</a></s></i>
           </div>
           {% else %}
           <div>
