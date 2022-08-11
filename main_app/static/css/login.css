@@ -9,8 +9,8 @@
   color: whitesmoke;
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 25px;
+  margin-top: 30px;
   margin-bottom: 20px;
   cursor: pointer;
   border-radius: 4px;
@@ -25,6 +25,6 @@
 .login-container{
   display: inline-block;
   background-color: rgba(245, 245, 245, 0.093);
-  padding: 20px;
+  padding: 50px;
   border-radius: 5px;
 }
