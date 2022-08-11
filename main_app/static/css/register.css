@@ -19,3 +19,10 @@
   border: 2px solid white;
   background-color: rgba(146, 144, 144, 0.428);
 }
+
+.login-btn{
+  color: whitesmoke;
+  background-color: transparent;
+  margin-top: 30px;
+  margin-left: 10px;
+}
