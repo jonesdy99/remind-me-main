@@ -1,4 +1,5 @@
 # RemindMe
+<p>RemindMe is a simple To-Do list application that demostrates full user auth and is meant to showcase fudemental python concepts in action.</p>
 
 ## Getting Started: 
 **[![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white) (Plan Link)](https://trello.com/b/ewoDHSvq/remindme)**<br>
