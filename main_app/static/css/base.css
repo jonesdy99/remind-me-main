@@ -63,7 +63,6 @@ html, body {
 .list-components:hover{
   cursor: pointer;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .list-header{
